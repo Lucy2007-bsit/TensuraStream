@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>TENSURA STREAM</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700;900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<div class="ambient" id="ambient"></div>
+
+<!-- NAV -->
+<nav class="topnav">
+  <div class="brand" onclick="goHome()"><span class="brand-orb"></span>TENSURA<span class="accent">STREAM</span></div>
+  <div class="navlinks" id="navlinks">
+    <div class="nav-item" id="seasonsNav">
+      <span onclick="toggleDropdown('seasonsNav', event)" style="display:flex;align-items:center;gap:6px;width:100%;justify-content:space-between;">SEASONS <span class="caret">▾</span></span>
+      <div class="dropdown">
+        <a onclick="openSeason(1)">Season 1 <span class="dd-tag tag-complete">Complete</span></a>
+        <a onclick="openSeason(2)">Season 2 <span class="dd-tag tag-complete">Complete</span></a>
+        <a onclick="openSeason(3)">Season 3 <span class="dd-tag tag-ongoing">Ongoing</span></a>
+        <a onclick="openSeason(4)">Season 4 <span class="dd-tag tag-soon">Coming Soon</span></a>
+        <a class="adder" onclick="goBrowse()">+ Add New Season</a>
+      </div>
+    </div>
+    <a class="nav-item" onclick="goMovies()">MOVIES</a>
+    <a class="nav-item" onclick="openSeason('oad')">OAD</a>
+    <a class="nav-item" onclick="openSeason('ona')">ONA</a>
+    <a class="nav-item" onclick="openSeason('diary')">SLIME DIARIES</a>
+  </div>
+  <button class="burger" onclick="toggleMobileNav()" aria-label="Toggle menu">☰</button>
+</nav>
+
+<!-- ================= HOME PAGE ================= -->
+<div class="page active" id="page-home">
+  <section class="hero">
+    <div class="hero-orb-wrap">
+      <div class="hero-ring"></div>
+      <div class="hero-orb">
+        <div class="eyebrow">NOW STREAMING</div>
+        <div class="hero-title">TENSURA</div>
+        <div class="hero-title accent">STREAM</div>
+      </div>
+    </div>
+    <div class="hero-sub">That Time I Got Reincarnated as a Slime</div>
+    <div class="hero-sub2">All seasons, movies, OADs, ONAs &amp; Slime Diaries — in one glowing hub</div>
+    <div class="hero-ctas">
+      <button class="btn btn-primary" onclick="openSeason(1)">▶ Start Watching</button>
+      <button class="btn btn-ghost" onclick="goBrowse()">Slime Diaries</button>
+    </div>
+    <div class="hero-stats">
+      <div class="stat"><div class="stat-num">4</div><div class="stat-label">SEASONS</div></div>
+      <div class="stat"><div class="stat-num">88</div><div class="stat-label">EPISODES</div></div>
+      <div class="stat"><div class="stat-num">5</div><div class="stat-label">OADS</div></div>
+      <div class="stat"><div class="stat-num">2</div><div class="stat-label">MOVIES</div></div>
+    </div>
+  </section>
+
+  <section class="section reveal">
+    <div class="section-head">
+      <div class="eyebrow">ALL CONTENT</div>
+      <h2>Browse the Collection</h2>
+      <p>Every arc, special, and side story — organized and ready to stream</p>
+      <div class="divider"></div>
+    </div>
+    <div class="grid" id="homeGrid"></div>
+  </section>
+
+  <footer>
+    <div class="brand"><span class="brand-orb" style="width:22px;height:22px;"></span>TENSURA<span class="accent">STREAM</span></div>
+    A fan-made concept hub for That Time I Got Reincarnated as a Slime.
+    <div style="margin-top:12px;"><a href="credits.html" style="color:var(--slime-blue-bright);font-size:12px;font-weight:600;">Credits →</a></div>
+  </footer>
+</div>
+
+<!-- ================= BROWSE PAGE ================= -->
+<div class="page" id="page-browse">
+  <section class="section reveal" style="padding-top:40px;">
+    <div class="section-head">
+      <div class="eyebrow">ALL CONTENT</div>
+      <h2>Browse the Collection</h2>
+      <p>Every arc, special, and side story — organized and ready to stream</p>
+      <div class="divider"></div>
+    </div>
+    <div class="grid" id="browseGrid"></div>
+  </section>
+  <footer>
+    <div class="brand"><span class="brand-orb" style="width:22px;height:22px;"></span>TENSURA<span class="accent">STREAM</span></div>
+    A fan-made concept hub for That Time I Got Reincarnated as a Slime.
+    <div style="margin-top:12px;"><a href="credits.html" style="color:var(--slime-blue-bright);font-size:12px;font-weight:600;">Credits →</a></div>
+  </footer>
+</div>
+
+<!-- ================= SEASON DETAIL PAGE ================= -->
+<div class="page" id="page-season">
+  <a class="backbtn" onclick="goBrowse()">← Back</a>
+  <div class="season-head">
+    <div class="season-orb"></div>
+    <div class="season-info">
+      <div class="season-tag" id="seasonTag">SEASON · 2018–2019</div>
+      <h2 id="seasonName">Season 1</h2>
+      <div class="subtitle" id="seasonSubtitle">The Birth of Rimuru</div>
+      <div class="desc" id="seasonDesc">Satoru Mikami is reincarnated as a slime and befriends the Storm Dragon Veldora.</div>
+    </div>
+    <div class="season-status-pill" id="seasonStatusPill">COMPLETE</div>
+  </div>
+  <div class="toolbar">
+    <div class="toolgroup">SORT
+      <button class="pillbtn active" id="sortEp" onclick="setSort('ep')">Episode Order</button>
+      <button class="pillbtn" id="sortDate" onclick="setSort('date')">Release Date</button>
+    </div>
+    <div class="toolgroup">FILTER
+      <button class="pillbtn active" id="filterAll" onclick="setFilter('all')">All</button>
+      <button class="pillbtn" id="filterAvail" onclick="setFilter('available')">Available</button>
+      <button class="pillbtn" id="filterSoon" onclick="setFilter('soon')">Coming Soon</button>
+    </div>
+    <div class="count-tag" id="epCount">24 episodes</div>
+  </div>
+  <div class="ep-grid" id="epGrid"></div>
+</div>
+
+<!-- ================= MOVIES PAGE ================= -->
+<div class="page" id="page-movies">
+  <a class="backbtn" onclick="goBrowse()">← Back</a>
+  <div class="season-head">
+    <div class="season-orb"></div>
+    <div class="season-info">
+      <div class="season-tag">FILM · COLLECTION</div>
+      <h2>Movies</h2>
+      <div class="subtitle">All Tensura Films</div>
+      <div class="desc">Every Tensura movie in one place — from Scarlet Bond to the newest release, Tears of Azure Sea.</div>
+    </div>
+    <div class="season-status-pill" style="color:var(--ok);border-color:var(--ok);">COMPLETE</div>
+  </div>
+  <div class="ep-grid" id="moviesGrid"></div>
+</div>
+
+<!-- ================= PLAYER PAGE ================= -->
+<div class="page" id="page-player">
+  <a class="backbtn" id="backToListBtn" onclick="goSeasonFromPlayer()">← Back</a>
+  <div class="player-wrap">
+    <div class="video-shell">
+      <div class="video-stage">
+        <!-- Real video player. It uses the normal browser controls (play,
+             pause, seek, volume, fullscreen) so there's no extra code to
+             wire up. It's hidden until an episode with a video is opened. -->
+        <video id="mainVideo" controls playsinline style="display:none;">
+          Sorry, your browser can't play this video.
+        </video>
+        <!-- Shown instead of the video when no video file has been added yet -->
+        <div class="video-placeholder" id="videoPlaceholder">
+          <div class="stage-orb"></div>
+          <p>No video uploaded yet<br><span>Add one in <code>episodeMedia</code> inside script.js</span></p>
+        </div>
+      </div>
+    </div>
+
+    <div class="below-player">
+      <div class="ep-info">
+        <span class="season-tag" id="playerSeasonTag">SEASON 1 · EPISODE 01</span>
+        <h2 id="playerTitle">Encounter with the Storm Dragon</h2>
+        <div class="card-desc" style="-webkit-line-clamp:unset;" id="playerDesc">Satoru Mikami is reincarnated as a slime in another world and stumbles upon the sealed Storm Dragon, Veldora.</div>
+        <div class="ep-actions">
+          <button class="btn btn-primary">▶ Resume</button>
+          <button class="btn btn-ghost">+ Watchlist</button>
+        </div>
+      </div>
+      <div class="grimoire">
+        <h3>UP NEXT · GRIMOIRE LOG</h3>
+        <div id="upNextList"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
