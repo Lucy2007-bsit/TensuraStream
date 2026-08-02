@@ -100,8 +100,8 @@ const seasons = [
     thumb: 'images/Season 4/cover.jpg',
     desc: "The next chapter of Rimuru's legend continues to unfold as new episodes release.",
     eps: buildEpisodes(
-      ['New Days','The Dungeon Evolves','The Avatar Team Is Formed','Invitation','The First Step','The Council of the West',"The Mastermind's Identity",'The Groundwork of Greed','Investigating the Ruins','The Master of Greed',"Milim's Friend",'Tempest Evolves','New Companions','The Black Numbers','An Unsettling Feeling','Gran, the Hero of Dawn'],
-      ['2026-04-03','2026-04-10','2026-04-17','2026-04-24','2026-05-08','2026-05-15','2026-05-22','2026-05-29','2026-06-05','2026-06-12','2026-06-19','2026-06-26','2026-07-03','2026-07-10','2026-07-17','2026-07-24'],
+      ['New Days','The Dungeon Evolves','The Avatar Team Is Formed','Invitation','The First Step','The Council of the West',"The Mastermind's Identity",'The Groundwork of Greed','Investigating the Ruins','The Master of Greed',"Milim's Friend",'Tempest Evolves','New Companions','The Black Numbers','An Unsettling Feeling','Gran, the Hero of Dawn','Lubelius, the Point of Convergence'],
+      ['2026-04-03','2026-04-10','2026-04-17','2026-04-24','2026-05-08','2026-05-15','2026-05-22','2026-05-29','2026-06-05','2026-06-12','2026-06-19','2026-06-26','2026-07-03','2026-07-10','2026-07-17','2026-07-24','2026-07-31'],
       null, 'Season 4', 'season4')
   },
 ];
