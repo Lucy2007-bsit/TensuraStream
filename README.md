@@ -1,2 +1,2 @@
 # TensuraSream
-not for everyone
+not for everyone and will never share this
