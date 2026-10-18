@@ -61,8 +61,10 @@
 /* ---------------- SEASONS ---------------- */
 /* Titles and air dates below are researched from the official episode
    guide (Wikipedia / Crunchyroll credits) so they match the real anime.
-   Season 3 is 24 episodes (not 9) and Season 4 has 16 aired so far as of
-   this update (not 14) — both counts were corrected during that research. */
+   Season 3 is 24 episodes. Season 4 is a five-cour season: cours 1-2
+   (24 episodes, Apr 3 - Sep 25, 2026) have aired and the remaining cours
+   return in 2027 — add new Season 4 episodes by extending BOTH arrays
+   (titles + dates) in the Season 4 block below. */
 const seasons = [
   {
     id: 1, tag: 'S1', label: 'Season 1', years: '2018–2019',
@@ -95,13 +97,13 @@ const seasons = [
       null, 'Season 3', 'season3')
   },
   {
-    id: 4, tag: 'S4', label: 'Season 4', years: '2026',
+    id: 4, tag: 'S4', label: 'Season 4', years: '2026–2027',
     subtitle: 'The Next Chapter', status: 'ongoing',
     thumb: 'images/Season 4/cover.jpg',
-    desc: "The next chapter of Rimuru's legend continues to unfold as new episodes release.",
+    desc: "The next chapter of Rimuru's legend. Cours 1 and 2 (24 episodes) have aired, ending with The Hero Awakens. The remaining three cours of this five-cour season return in 2027.",
     eps: buildEpisodes(
-      ['New Days','The Dungeon Evolves','The Avatar Team Is Formed','Invitation','The First Step','The Council of the West',"The Mastermind's Identity",'The Groundwork of Greed','Investigating the Ruins','The Master of Greed',"Milim's Friend",'Tempest Evolves','New Companions','The Black Numbers','An Unsettling Feeling','Gran, the Hero of Dawn','Lubelius, the Point of Convergence','Turbulence in the West','Death and Loss','Chronoa the Hero, Part 1'],
-      ['2026-04-03','2026-04-10','2026-04-17','2026-04-24','2026-05-08','2026-05-15','2026-05-22','2026-05-29','2026-06-05','2026-06-12','2026-06-19','2026-06-26','2026-07-03','2026-07-10','2026-07-17','2026-07-24','2026-08-07','2026-08-14','2026-08-21','2026-08-28'],
+      ['New Days','The Dungeon Evolves','The Avatar Team Is Formed','Invitation','The First Step','The Council of the West',"The Mastermind's Identity",'The Groundwork of Greed','Investigating the Ruins','The Master of Greed',"Milim's Friend",'Tempest Evolves','New Companions','The Black Numbers','An Unsettling Feeling','Gran, the Hero of Dawn','Lubelius, the Point of Convergence','Turbulence in the West','Death and Loss','Chronoa the Hero, Part 1','Chronoa the Hero, Part 2','Where the Soul Resides',"Granville's Hope",'The Hero Awakens'],
+      ['2026-04-03','2026-04-10','2026-04-17','2026-04-24','2026-05-08','2026-05-15','2026-05-22','2026-05-29','2026-06-05','2026-06-12','2026-06-19','2026-06-26','2026-07-03','2026-07-10','2026-07-17','2026-07-24','2026-08-07','2026-08-14','2026-08-21','2026-08-28','2026-09-04','2026-09-11','2026-09-18','2026-09-25'],
       null, 'Season 4', 'season4')
   },
 ];
